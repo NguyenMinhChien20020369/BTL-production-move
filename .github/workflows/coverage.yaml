@@ -1,0 +1,17 @@
+name: coverage
+on:
+  push:
+    branches: [main]
+      - 'release/**'
+      - '!dev/**'
+  pull_request:
+    type: [opened, reopened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  Coverage-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - run: npm install
+      - uses: ArtiomTr/jest-coverage-report-action@v2
