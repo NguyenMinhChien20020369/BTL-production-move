@@ -2,8 +2,6 @@ name: coverage
 on:
   push:
     branches: [main]
-      - 'release/**'
-      - '!dev/**'
   pull_request:
     type: [opened, reopened, synchronize]
   workflow_dispatch:
